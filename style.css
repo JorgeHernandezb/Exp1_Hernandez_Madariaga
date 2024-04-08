@@ -1,6 +1,6 @@
 body {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    /*padding-top: 3rem;*/
+    /*padding-bottom: 3rem; Con esto activado, el footer queda con padding.*/
     color: #5a5a5a;
   }
   
@@ -22,15 +22,32 @@ body {
   .carousel-item {
     height: 32rem;
   }
+
+  /*
+  VERSIÓN ANTIGUA DE LA DE ARRIBA.
+
+  .carousel-item {
+    height: 32rem;
+  }
+  */
+
   .carousel-item > img {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
     height: 32rem;
+    object-fit: cover;
   }
   
-  
+  /* FLECHAS DEL CARRUSEL */
+
+  .carousel-control-next,
+  .carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+  }
+
+
   /* MARKETING CONTENT
   -------------------------------------------------- */
   
@@ -111,18 +128,29 @@ body {
     text-align: center;
 }
 
-.container {
-
-  justify-content: space-around;
+#containerPerfil {
+  margin-left: 10%; /* Gracias a esto, el perfil no queda pegado a la izquierda */
+  justify-content:space-around;
   align-items: center;
   border: 1px solid rgb(117, 199, 244);
   height: auto;
+  width: 80%;
   background-color:rgb(117, 199, 244)
 }
 
+#containerRegister{
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #596272;
+}
+
 .profile-img{
-  width: 40%;
-  height: 40%;
+
+  
   float: right;
   shape-outside: circle(50%);
 }
@@ -130,3 +158,170 @@ body {
 .profile-hero{
   padding: 5rem 0 0;
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
+/*
+footer{
+  padding: 20px;
+  color: #ececec;
+  background-color: #1d1d1d;
+  height: 280px;
+  margin-top: 20px;
+}
+*/
+
+footer div p{
+  font-size: 12px;
+  color: #888888;
+  padding-top: 5px;
+  line-height: 10px;
+}
+
+
+
+#linkFooter{
+  color: #c5c5c5;
+  text-decoration: none;
+}
+
+#logoFisioActivo{
+  color: #3C92D8;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 16px;
+  padding-top: 3px;
+}
+
+#socialMediaShare{
+  text-decoration: none;
+  margin-right: 16px;
+  padding-top: 3px;
+}
+
+/* CSS GALERÍA */
+
+html {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.containerGaleria1 {
+  font-family:'open sans'
+}
+
+.containerGaleria1 .container-h1 {
+  text-align: center;
+}
+.containerGaleria1 .card{
+  margin: 5%;
+  border-radius: 10%;
+}
+
+.containerGaleria2 {
+  font-family:'open sans'
+}
+
+.containerGaleria2 .card{
+  margin: 5%;
+  border-radius: 10%;
+}
+
+.containerGaleria3 {
+  font-family:'open sans'
+}
+
+.containerGaleria3 .card{
+  margin: 5%;
+  border-radius: 10%;
+}
+
+.card-img-top {
+  margin-top: 10%;
+  width: 100%;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 20px;
+  box-shadow: 0px 3px 5px rgba(15,15,15, .5);
+  border-radius: 3%; 
+  object-fit:contain;
+  /*
+  Agrege el object-fit: contain, para que la imágen se contenga en la carta.
+  Width: 100% para que la imágen mantenga su tamaño correcto.
+  height: 30vw Al parecer le da el efecto de Responsive
+  igual le cambie alguna cosita en el galeria.html
+  
+  */
+}
+
+.img-responsive 
+{ 
+    width:100%;
+}
+
+/*
+RESPONSIVE
+*/
+
+.response{				/*clase*/					
+
+	height: 50vh;
+	display:flex;		/*desplazamiento flexible*/
+	justify-content: center;	/*contenido de la caja centrado*/
+	align-items: center;
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+	.response:after {
+		content: 'Small';
+	}
+}
+
+@media (min-width: 576px) {
+	.response:after{
+		content: 'Small';
+	}
+}
+
+/* Medium devices 768px and up*/
+@media (min-width: 768px) { 
+	.response:after{
+		content: 'Medium';
+	}
+}
+/* Large devices 992px and up */
+@media (min-width: 992px) { 
+		.response:after{
+		content: 'large';
+	}
+ }
+/* Extra Large devices  1200px and up*/
+
+@media (min-width: 1200px) { 
+	.response:after{
+		content:'Extra Large';
+		} 
+}
+
+/*
+CARRUSEL
+*/
+
+#myCarrusel.carousel {
+  width: 60%;
+  margin: auto;
+}
+
+#myCarrusel.carousel .carousel-item img {
+  width: 100%;
+}
+
+iframe {  /* CSS VIDEO YOUTUBE */
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
